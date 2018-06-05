@@ -12,7 +12,7 @@
 
 eureka:
     instance:
-        hostname: agile-falls-55847.herokuapp.com
+        hostname: questionapp.herokuapp.com
         non-secure-port: 80
         prefer-ip-address: false
     client:
