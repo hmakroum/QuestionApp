@@ -35,6 +35,8 @@
       "fr",
       "ar-ly",
       "en"
-    ]
+    ],
+    "herokuDeployType": "git",
+    "herokuAppName": "question"
   }
 }
