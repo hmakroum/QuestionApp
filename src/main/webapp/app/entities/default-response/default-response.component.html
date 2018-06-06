@@ -1,0 +1,64 @@
+<div>
+    <h2>
+        <span jhiTranslate="questionApp.defaultResponse.home.title">Default Responses</span>
+        <button class="btn btn-primary float-right jh-create-entity create-default-response" [routerLink]="['/', { outlets: { popup: ['default-response-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="questionApp.defaultResponse.home.createLabel">
+            Create new Default Response
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="defaultResponses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="questionApp.defaultResponse.reponse">Reponse</span></th>
+            <th><span jhiTranslate="questionApp.defaultResponse.question">Question</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let defaultResponse of defaultResponses ;trackBy: trackId">
+                <td><a [routerLink]="['../default-response', defaultResponse.id ]">{{defaultResponse.id}}</a></td>
+                <td>{{defaultResponse.reponse}}</td>
+                <td>
+                    <div *ngIf="defaultResponse.question">
+                        <a [routerLink]="['../question', defaultResponse.question?.id ]" >{{defaultResponse.question?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../default-response', defaultResponse.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'default-response/'+ defaultResponse.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'default-response/'+ defaultResponse.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

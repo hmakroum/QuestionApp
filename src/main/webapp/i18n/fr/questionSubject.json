@@ -1,0 +1,10 @@
+{
+    "questionApp": {
+        "QuestionSubject" : {
+            "null": "",
+            "PERSONNALITE_QUOTIDIEN": "PERSONNALITE_QUOTIDIEN",
+            "FAMILLE_PROJETS": "FAMILLE_PROJETS",
+            "PROFILE_RECHERCHE": "PROFILE_RECHERCHE"
+        }
+    }
+}

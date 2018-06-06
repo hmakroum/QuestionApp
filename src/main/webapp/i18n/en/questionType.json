@@ -1,0 +1,10 @@
+{
+    "questionApp": {
+        "QuestionType" : {
+            "null": "",
+            "BINAIRE": "BINAIRE",
+            "MULTIPLE": "MULTIPLE",
+            "LIBRE": "LIBRE"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+
+{
+    "questionApp": {
+        "defaultResponse" : {
+            "home": {
+                "title": "DefaultResponses",
+                "createLabel": "Créer un nouveau Default Response",
+                "createOrEditLabel": "Créer ou éditer un Default Response"
+            },
+            "created": "Un nouveau Default Response a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Default Response avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Default Response avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Default Response {{ id }} ?"
+            },
+            "detail": {
+                "title": "Default Response"
+            },
+            "reponse": "Reponse",
+            "question": "Question"
+        }
+    }
+}

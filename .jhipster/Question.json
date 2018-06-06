@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "defaultResponses",
+            "otherEntityName": "defaultResponse",
+            "otherEntityRelationshipName": "question"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reponses",
+            "otherEntityName": "reponse",
+            "otherEntityRelationshipName": "question"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "questionSubject",
+            "fieldType": "QuestionSubject",
+            "fieldValues": "PERSONNALITE_QUOTIDIEN,FAMILLE_PROJETS,PROFILE_RECHERCHE"
+        },
+        {
+            "fieldName": "question",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "questionType",
+            "fieldType": "QuestionType",
+            "fieldValues": "BINAIRE,MULTIPLE,LIBRE"
+        }
+    ],
+    "changelogDate": "20180606043552",
+    "entityTableName": "question",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

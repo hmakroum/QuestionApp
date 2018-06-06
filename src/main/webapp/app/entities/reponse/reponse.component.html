@@ -1,0 +1,64 @@
+<div>
+    <h2>
+        <span jhiTranslate="questionApp.reponse.home.title">Reponses</span>
+        <button class="btn btn-primary float-right jh-create-entity create-reponse" [routerLink]="['/', { outlets: { popup: ['reponse-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="questionApp.reponse.home.createLabel">
+            Create new Reponse
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="reponses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="questionApp.reponse.reponse">Reponse</span></th>
+            <th><span jhiTranslate="questionApp.reponse.question">Question</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let reponse of reponses ;trackBy: trackId">
+                <td><a [routerLink]="['../reponse', reponse.id ]">{{reponse.id}}</a></td>
+                <td>{{reponse.reponse}}</td>
+                <td>
+                    <div *ngIf="reponse.question">
+                        <a [routerLink]="['../question', reponse.question?.id ]" >{{reponse.question?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../reponse', reponse.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'reponse/'+ reponse.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'reponse/'+ reponse.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+entity Question{
+	questionSubject QuestionSubject,
+	question String,
+    questionType QuestionType,
+}
+
+entity DefaultResponse{
+	reponse String
+}
+
+enum QuestionSubject{
+	PERSONNALITE_QUOTIDIEN, FAMILLE_PROJETS, PROFILE_RECHERCHE
+}
+enum QuestionType{
+	BINAIRE, MULTIPLE, LIBRE
+}
+
+entity Reponse{
+	reponse String
+}
+
+relationship OneToMany {
+  Question{defaultResponses} to DefaultResponse{question}
+  Question{reponses} to Reponse{question}
+}
