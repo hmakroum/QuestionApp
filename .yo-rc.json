@@ -37,6 +37,6 @@
       "en"
     ],
     "herokuDeployType": "git",
-    "herokuAppName": "agile-falls-55847"
+    "herokuAppName": null
   }
 }
