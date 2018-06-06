@@ -37,6 +37,6 @@
       "en"
     ],
     "herokuDeployType": "git",
-    "herokuAppName": null
+    "herokuAppName": "questionapplication"
   }
 }
